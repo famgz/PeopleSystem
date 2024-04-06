@@ -53,4 +53,8 @@ public class Funcionario extends Pessoa {
 		return dataAdmissao;
 	}
 
+	public int getMatricula() {
+		return matricula;
+	}
+
 }

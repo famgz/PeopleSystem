@@ -8,7 +8,7 @@ import com.famgz.people.*;
 public class Main {
 
 	public static void main(String[] args) {
-		Endereco endereco = new Endereco("acacias", "666", "58000068", "Bairro nobre", "Los Angeles", "Paraiba",
+		Endereco end1 = new Endereco("acacias", "666", "58000068", "Bairro nobre", "Los Angeles", "Paraiba",
 				"Brasil");
 
 		// Endereco endereco2 = new Endereco();
@@ -16,7 +16,7 @@ public class Main {
 		Cliente cliente = new Cliente(
 				"Pedro",
 				LocalDate.of(2001, 01, 01),
-				endereco,
+				end1,
 				new Telefone(),
 				"001",
 				Profissao.ADVOGADO);
@@ -24,12 +24,14 @@ public class Main {
 		Funcionario funcionario = new Funcionario(
 				"Carlos",
 				LocalDate.of(1990, 2, 3),
-				endereco,
+				end1,
 				new Telefone(),
 				12345,
 				Cargo.ESTAGIARIO,
 				3000,
 				LocalDate.of(2022, 3, 3));
+
+		end1.setRua("Nova rua cadastrada");
 
 		System.out.println(cliente.getNome());
 		System.out.println(cliente.obterIdade());
@@ -42,5 +44,7 @@ public class Main {
 		funcionario.reajustarSalario(12.4);
 
 		System.out.println(funcionario.getSalario());
+
+		System.out.println(cliente.getEndereco().getRua());
 	}
 }
