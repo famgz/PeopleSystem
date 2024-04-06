@@ -4,13 +4,12 @@ import java.time.LocalDate;
 import java.time.Period;
 
 abstract class Pessoa {
-	String nome;
-	LocalDate dataNascimento;
-	String endereco;
-	String telefone;
+	private String nome;
+	private LocalDate dataNascimento;
+	private Endereco endereco;
+	private Telefone telefone;
 
-	public Pessoa(String nome, LocalDate dataNascimento, String endereco,
-			String telefone) {
+	public Pessoa(String nome, LocalDate dataNascimento, Endereco endereco, Telefone telefone) {
 		this.nome = nome;
 		this.dataNascimento = dataNascimento;
 		this.endereco = endereco;
@@ -19,13 +18,27 @@ abstract class Pessoa {
 
 	public int obterIdade() {
 		LocalDate currentDate = LocalDate.now();
-		Period age = Period.between(this.dataNascimento, currentDate);
-		int years = age.getYears();
-		return years;
+		return Period.between(this.dataNascimento, currentDate).getYears();
 	}
 
 	boolean cadastrar() {
-
 		return true;
 	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public Telefone getTelefone() {
+		return telefone;
+	}
+
 }

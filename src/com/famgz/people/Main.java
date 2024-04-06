@@ -9,7 +9,7 @@ public class Main {
 				LocalDate.of(2001, 01, 01), "Rua das amarguras", "32245556",
 				"gerente", 10000.0, LocalDate.of(2023, 01, 01));
 
-		System.out.println(funcionario.nome);
+		System.out.println(funcionario.getNome());
 		System.out.println(funcionario.obterIdade());
 
 	}
