@@ -12,6 +12,10 @@ abstract class Pessoa {
 	private Endereco endereco;
 	private Telefone telefone;
 
+	public Pessoa() {
+		System.out.println("Criando uma pessoa sem atributos");
+	}
+
 	public Pessoa(String nome, LocalDate dataNascimento, Endereco endereco, Telefone telefone) {
 		this.nome = nome;
 		this.dataNascimento = dataNascimento;
@@ -20,8 +24,9 @@ abstract class Pessoa {
 	}
 
 	public int obterIdade() {
-		LocalDate currentDate = LocalDate.now();
-		return Period.between(this.dataNascimento, currentDate).getYears();
+		return Period
+				.between(this.dataNascimento, LocalDate.now())
+				.getYears();
 	}
 
 	boolean cadastrar() {
@@ -32,16 +37,31 @@ abstract class Pessoa {
 		return nome;
 	}
 
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	public LocalDate getDataNascimento() {
 		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 
 	public Endereco getEndereco() {
 		return endereco;
 	}
 
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
 	public Telefone getTelefone() {
 		return telefone;
 	}
 
+	public void setTelefone(Telefone telefone) {
+		this.telefone = telefone;
+	}
 }

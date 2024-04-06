@@ -2,16 +2,21 @@ package com.famgz.people;
 
 import java.time.LocalDate;
 
+import com.famgz.composicoes.Cargo;
+import com.famgz.composicoes.Endereco;
+import com.famgz.composicoes.Profissao;
+import com.famgz.composicoes.Telefone;
+
 public class Main {
 
 	public static void main(String[] args) {
-		Funcionario funcionario = new Funcionario("Ze",
-				LocalDate.of(2001, 01, 01), "Rua das amarguras", "32245556",
-				"gerente", 10000.0, LocalDate.of(2023, 01, 01));
+		Cliente cliente = new Cliente("Pedro", LocalDate.of(2001, 01, 01), new Endereco(), new Telefone(), "001",
+				Profissao.ADVOGADO);
 
-		System.out.println(funcionario.getNome());
-		System.out.println(funcionario.obterIdade());
+		Funcionario funcionario = new Funcionario("Carlos", LocalDate.of(1990, 2, 3), new Endereco(), new Telefone(),
+				Cargo.CONSULTOR, 3000, LocalDate.of(2022, 3, 3));
 
+		System.out.println(cliente.getNome());
+		System.out.println(cliente.obterIdade());
 	}
-
 }
