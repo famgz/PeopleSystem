@@ -38,4 +38,16 @@ public class Funcionario extends Pessoa {
 		return true;
 	}
 
+	public Cargo getCargo() {
+		return cargo;
+	}
+
+	public double getSalario() {
+		return salario;
+	}
+
+	public LocalDate getDataAdmissao() {
+		return dataAdmissao;
+	}
+
 }
