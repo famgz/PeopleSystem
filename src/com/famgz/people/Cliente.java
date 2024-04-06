@@ -2,6 +2,9 @@ package com.famgz.people;
 
 import java.time.LocalDate;
 
+import com.famgz.composicoes.Endereco;
+import com.famgz.composicoes.Telefone;
+
 public class Cliente extends Pessoa {
 
 	private Profissao profissao;

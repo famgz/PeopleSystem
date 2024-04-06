@@ -1,4 +1,4 @@
-package com.famgz.people;
+package com.famgz.composicoes;
 
 public class Endereco {
     private String rua;
