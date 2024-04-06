@@ -11,7 +11,7 @@ public class Main {
 		Endereco endereco = new Endereco("acacias", "666", "58000068", "Bairro nobre", "Los Angeles", "Paraiba",
 				"Brasil");
 
-		Endereco endereco2 = new Endereco();
+		// Endereco endereco2 = new Endereco();
 
 		Cliente cliente = new Cliente(
 				"Pedro",
@@ -26,6 +26,7 @@ public class Main {
 				LocalDate.of(1990, 2, 3),
 				endereco,
 				new Telefone(),
+				12345,
 				Cargo.ESTAGIARIO,
 				3000,
 				LocalDate.of(2022, 3, 3));
@@ -37,5 +38,9 @@ public class Main {
 		funcionario.promover(Cargo.PLENO);
 
 		System.out.println(funcionario.getCargo());
+
+		funcionario.reajustarSalario(12.4);
+
+		System.out.println(funcionario.getSalario());
 	}
 }

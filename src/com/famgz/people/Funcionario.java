@@ -7,6 +7,7 @@ import com.famgz.composicoes.Endereco;
 import com.famgz.composicoes.Telefone;
 
 public class Funcionario extends Pessoa {
+	private int matricula;
 	private Cargo cargo;
 	private double salario;
 	private LocalDate dataAdmissao;
@@ -16,20 +17,22 @@ public class Funcionario extends Pessoa {
 			LocalDate dataNascimento,
 			Endereco endereco,
 			Telefone telefone,
+			int matricula,
 			Cargo cargo,
 			double salario,
 			LocalDate dataAdmissao) {
 		super(nome, dataNascimento, endereco, telefone);
+		this.matricula = matricula;
 		this.cargo = cargo;
 		this.salario = salario;
 		this.dataAdmissao = dataAdmissao;
 	}
 
-	public boolean reajustarSalario(double novoSalario) {
-		if (novoSalario <= 0) {
+	public boolean reajustarSalario(double percentual) {
+		if (percentual <= 0 || percentual >= 100) {
 			return false;
 		}
-		this.salario = novoSalario;
+		this.salario *= 1 + (percentual / 100);
 		return true;
 	}
 
