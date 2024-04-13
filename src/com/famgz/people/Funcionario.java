@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import com.famgz.composicoes.Cargo;
 import com.famgz.composicoes.Endereco;
-import com.famgz.composicoes.Telefone;
+import com.famgz.estrutura.ListaDeTelefones;
 
 public class Funcionario extends Pessoa {
 	private int matricula;
@@ -12,16 +12,9 @@ public class Funcionario extends Pessoa {
 	private double salario;
 	private LocalDate dataAdmissao;
 
-	public Funcionario(
-			String nome,
-			LocalDate dataNascimento,
-			Endereco endereco,
-			Telefone telefone,
-			int matricula,
-			Cargo cargo,
-			double salario,
-			LocalDate dataAdmissao) {
-		super(nome, dataNascimento, endereco, telefone);
+	public Funcionario(String nome, LocalDate dataNascimento, Endereco endereco, ListaDeTelefones telsContato,
+			int matricula, Cargo cargo, double salario, LocalDate dataAdmissao) {
+		super(nome, dataNascimento, endereco, telsContato);
 		this.matricula = matricula;
 		this.cargo = cargo;
 		this.salario = salario;

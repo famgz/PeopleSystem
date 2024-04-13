@@ -4,23 +4,23 @@ import java.time.LocalDate;
 import java.time.Period;
 
 import com.famgz.composicoes.Endereco;
-import com.famgz.composicoes.Telefone;
+import com.famgz.estrutura.ListaDeTelefones;
 
 abstract class Pessoa {
 	private String nome;
 	private LocalDate dataNascimento;
 	private Endereco endereco;
-	private Telefone telefone;
+	private ListaDeTelefones telsContato;
 
 	public Pessoa() {
 		System.out.println("Criando uma pessoa sem atributos");
 	}
 
-	public Pessoa(String nome, LocalDate dataNascimento, Endereco endereco, Telefone telefone) {
+	public Pessoa(String nome, LocalDate dataNascimento, Endereco endereco, ListaDeTelefones telsContato) {
 		this.nome = nome;
 		this.dataNascimento = dataNascimento;
 		this.endereco = endereco;
-		this.telefone = telefone;
+		this.telsContato = telsContato;
 	}
 
 	public int obterIdade() {
@@ -45,7 +45,7 @@ abstract class Pessoa {
 		return endereco;
 	}
 
-	public Telefone getTelefone() {
-		return telefone;
+	public ListaDeTelefones getTelsContato() {
+		return telsContato;
 	}
 }
